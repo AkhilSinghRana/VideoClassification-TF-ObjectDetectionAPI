@@ -16,7 +16,7 @@ def parse_requiremetns(fname):
     return required
     
 setup(
-    name = "ContinuousControlAgent",
+    name = "DeepVideoAnalysis",
     author = "Akhil Singh Rana",
     author_email = "er.akhil.singh.rana@gmail.com",
     description = ("This is project for Object detection / Classification on Video Streams"
