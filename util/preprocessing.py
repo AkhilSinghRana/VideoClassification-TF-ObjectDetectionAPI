@@ -3,7 +3,7 @@ import cv2
 import os 
 import options
 
-from tqdm import tqdm
+# from tqdm import tqdm
 
 def extractVideoFrames(**kwargs):
     
