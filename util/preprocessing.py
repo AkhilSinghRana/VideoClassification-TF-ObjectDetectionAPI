@@ -3,7 +3,7 @@ import cv2
 import os 
 import options
 
-# from tqdm import tqdm
+from tqdm import tqdm
 
 def extractVideoFrames(**kwargs):
     
@@ -25,7 +25,7 @@ def extractVideoFrames(**kwargs):
     
     # frame 
     currentframe = 0
-    
+    pbar = tqdm(total=10000)
     while(True): 
         
         # reading from frame 
@@ -33,10 +33,11 @@ def extractVideoFrames(**kwargs):
     
         if ret: 
             # if video is still left continue creating images 
-            print(output_folder)
+            
             name = os.path.join(output_folder,"{}_frame_{}.jpg".format(filename.split("/")[-1].split(".")[0] , currentframe))
-            print ('Creating frame ...' + name) 
-    
+            pbar.update(10)
+            
+            # Do whatever processing you want to do!
             # writing the extracted images 
             #io.imsave(name, frame)
             cv2.imwrite(name, frame) 
@@ -45,6 +46,8 @@ def extractVideoFrames(**kwargs):
             # show how many frames are created 
             currentframe += 1
         else: 
+            print("All frames extracted")
+            pbar.close()
             break
     
     # Release all space and windows once done 
