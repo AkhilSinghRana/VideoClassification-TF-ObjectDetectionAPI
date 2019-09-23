@@ -1,6 +1,8 @@
 # Importing all necessary libraries 
 import cv2 
-import os 
+import os, sys
+sys.path.append("../") 
+sys.path.append("./") 
 import options
 
 from tqdm import tqdm
