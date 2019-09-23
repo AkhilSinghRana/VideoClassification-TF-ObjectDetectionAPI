@@ -40,8 +40,9 @@ def extractVideoFrames(**kwargs):
             # Do whatever processing you want to do!
             # writing the extracted images 
             #io.imsave(name, frame)
-            cv2.imwrite(name, frame) 
-    
+            if currentframe%10 == 0:
+                cv2.imwrite(name, frame) 
+            
             # increasing counter so that it will 
             # show how many frames are created 
             currentframe += 1
