@@ -30,7 +30,6 @@ print(matplotlib.get_backend())
 # Import modules to visualize lable_map
 from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
-
 # What model to download.
 MODEL_NAME = 'ssd_mobilenet_v2_coco_2018_03_29'
 #MODEL_FILE = MODEL_NAME + '.tar.gz'
@@ -84,7 +83,3 @@ def run_inference_for_single_image(image, tensor_dict, sess):
   
   return output_dict
 
-
-  
-  
-  
